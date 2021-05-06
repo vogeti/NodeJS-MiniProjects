@@ -1,0 +1,35 @@
+-So basically Jade is a middleware which will help render the views(.jade pages) on to the UI. 
+-For that you might need to set the views folder in the app.js file. And also res.Send no longer works we need to give res.Render(view file name under views folder)
+-Jade views do not have actual html syntax. they just indent the html.
+Example: 
+html    
+    head
+        h1 Hello World
+-You can set the common UI items like headers/menuItems as a different file called Layout
+-Then you can simply call the items you want between that content. Just by using block content on the jade file.
+-While calling a function we can send the information we want to the UI page by sending it as a json object
+Example: 
+    res.render('about', {'Title':'Hello world from render'});
+    On jade page you can use it as, #{Title} wherever you want. 
+-You declare a form on the .jade file and then on the backend you will use the function nodeMailer.createTransport to capture the information. 
+-You give admins gmail and password inside the post method itself. Also, you store the email template in the object and then use it with concatinating the values give on the input. 
+-Most imp items involved in sending a email using nodeMailer. 
+    -nodeMailer.createTransport
+    -transporter.sendMail
+    -res.redirect('/') : used to redirect the page after the request is made in app.post();
+-In this simple application we used express to build a post api and then we used JADE to create views and also learnt how we save the templace in one .jade file and call the required UI content by using block content. 
+-Jade format is different to the html format, jade is all about indentation. You must use online html to jade converters to get the jade code to us under .jade views. 
+-Use pipe operator | or the first word on a new line is considered as a tag. 
+-Jade is template engine for node js and default rendring engine for express web framework. 
+
+-We build user auth system using nodejs, express and passport. 
+-Passport is a flexible auth system for nodejs 
+-Passport makes it possible to login to third part applications like facebook/ google etc. 
+-MongoDB is a no SQL database. It holdes documents basically in json format. 
+-User reg we use passport, well know module for auth in nodejs
+-We us bcrypt toencrypt and save passwords 
+-Mongo db files are at: /usr/local/mongodb
+-db.users.insert({name: 'Simba', email: 'simba@gmail.com', username: 'simba1', password:'1234'});
+-db.users.find()
+-db.users.find().pretty()
+-db.users.update({user:'Aditya'}, {$set:{email:'vaditya@gmail.com}});

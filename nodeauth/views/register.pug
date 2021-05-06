@@ -1,0 +1,31 @@
+extends layout 
+
+block content 
+
+    h2.page-header Register to NodeAuth
+    ul.errors   
+        if errors 
+            each error, i in errors  
+                div.alert.alert-danger #{error.msg}
+    form(method='post', action='/users/register', enctype ='multipart/form-data')
+        h4 Please register using the form below.
+            .form-group 
+            label Name 
+            input.form-control(name='name', type='text', placeholder='Enter Name')
+            .form-group  
+            label Email 
+            input.form-control(name='email', type='email', placeholder='Enter Email')
+            .form-group 
+            label User Name 
+            input.form-control(name='username', type='text', placeholder='Enter Username')
+            .form-group 
+            label Password 
+            input.form-control(name='password', type='password', placeholder='Enter Password')
+            .form-group 
+            label Confirm Password 
+            input.form-control(name='confirmpassword', type='password', placeholder='Enter Password Again')
+            .form-group 
+            label Profile Image 
+            input.form-control(name='profileimage', type='file')
+        button.btn.btn-primary(type='sumbit', name='sumbit', value='Register') Register
+        
